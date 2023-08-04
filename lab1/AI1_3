@@ -1,0 +1,3 @@
+NextDate is a function of three variables: month, date, and year. It returns the
+next date of the day after the input date. The month, date, and year variables have integer
+values.
