@@ -1,0 +1,82 @@
+Write a program that accepts three integers, a, b, and c, as input. These are
+taken to be sides of a triangle. The output of the program is the type of triangle determined by
+the three sides: Equilateral, Isosceles, Scalene, Right Triangle or NotATriangle. 
+
+#include <iostream>
+#include <bits/stdc++.h>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+
+bool triangle(int a,int b,int c){
+    if(a<b+c){
+        if(b<a+c){
+            if (c<a+b){
+                return true;
+            }
+        }
+    }
+    return false;
+
+}
+int isosceles(int a,int b,int c){
+    
+    if(a==b){
+        return 1;
+    }else if(b==c){
+        return 2;
+    }
+    else if(a==c){
+        return 3;
+    }else{
+        return 4;
+    }
+
+}
+
+bool equilateral(int a, int b,int c,int q){
+    if(q==1&& c==a){
+        return true;
+    }else if(q==2 &&b==a){
+        return true;
+    }else if(q==3&& c==b){
+        return true;
+    }else{
+        return false;
+    }
+
+}
+int righttriangle(int a,int b,int c){
+    int max = std::max({a * a, b * b, c * c});
+    int y = ((a*a)+(b*b)+(c*c))-(2*(max));
+    return y;
+
+}
+
+int main(){
+    int a,b,c;
+    cin>>a>>b>>c;
+    if (triangle(a,b,c)==true){
+        cout<<"it is a valid triangle"<<endl;
+        int q=isosceles(a,b,c) ;
+        if(q==1||q==2){
+            cout<<"isosceles triangle";
+            int e = equilateral(a,b,c,q);
+            if(e==true){
+                cout<<"equilateral triangle";
+            }
+        }if(q==3){
+            cout<<"isosceles triangle";
+            int e = equilateral(a,b,c,q);
+            if(e==true){
+                cout<<endl;
+                cout<<"equilateral triangle";
+            }
+        }
+        int r=righttriangle(a,b,c);
+     
+        if(r==0){
+            cout<<"Right Angled Triangle";
+        }
+    }
+}
