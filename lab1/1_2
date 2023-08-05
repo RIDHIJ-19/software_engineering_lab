@@ -1,0 +1,28 @@
+Write a program to accept a number and find the sum of its digits repeatedly till
+the result is a single digit. For example: if entered digits are 8953, program will compute and
+print 8953, 25, 7.
+
+#include <iostream>
+using namespace std;
+void sum(int n){
+    cout<<n<<" ";
+    while(n >0){
+        int num = n;
+        int sum = 0;
+        while(num >0){
+            int d = num%10;
+            sum +=d; 
+            num /=10;
+        }
+        cout<<sum<<" ";
+        n = sum;
+        if (n<10){
+            break;
+        }
+    }
+}
+int main(){
+    int n;
+    cin>>n;
+    sum(n);
+}
