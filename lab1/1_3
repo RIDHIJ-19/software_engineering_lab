@@ -1,0 +1,37 @@
+Write a program to compute the average of 100 or fewer numbers that lie between
+the bounding values: It also computes the sum and the total number valid. 
+/// input upperbound  and lowerbound
+/// input n ---> total no of values to entered
+///input numbers
+///output---> sum, no of valid values 
+
+#include <bits/stdc++.h>
+using namespace std;
+void valid_sum(int upper,int lower,int n,int *arr){
+    int sum = 0;
+    int count = 0;
+    for(int i = 0;i<n;i++){
+        if(arr[i]>upper && arr[i]<lower){
+            sum += arr[i];
+            count++;
+        }
+         
+    }
+    cout<<"sum of nos is: "<<sum<<endl;
+    cout<<"total valid nos: "<<count<<endl;
+}
+
+int main(){
+    int upper , lower;
+    cout <<"enter thr upper and lower bound:";
+    cin>>upper>>lower;
+    int n;
+    cout<<"enter no of digits:";
+    cin>>n;
+    int arr[n];
+    for(int i = 0;i<n;i++){
+        cin>>arr[i];
+    }
+    valid_sum(upper,lower,n,arr);
+
+}
