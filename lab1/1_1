@@ -1,0 +1,18 @@
+Write a program to compute 𝑎^𝑒.
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int power(int a,int e){
+    if(e==0){
+    return 1;
+    }
+    return a*power(a,e-1);
+
+}
+int main(){
+    int a,e;
+    cin>>a>>e;
+    int ans = power(a,e);
+    cout<<ans;
+}
