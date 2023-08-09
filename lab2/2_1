@@ -1,0 +1,8 @@
+A college is having number of Departments. The IT Inventory like Server, 
+Desktop Computer, Laptop, Printer, UPS, Scanner, Projector are being issued to the various 
+departments for smooth conduct of the Academics. For effective management of the 
+Department IT Inventory, a Unique Code for each inventory is required to be allotted. The 
+Department may be issued additional Inventory Items based on their requirement. 
+You are required explore the problem thoroughly and write a Program for auto generation of 
+Unique Number to the listed IT Inventory.
+
