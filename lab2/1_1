@@ -1,0 +1,45 @@
+Every year new students are admitted in the various program offered by the 
+college. On admission of the students in a program, the Academic Branch generates the 
+Enrollment Number to every student. Presently, the college is generating the enrollment 
+number manually which sometime results into anomaly.
+You are required to write a program for auto generation of the enrollment number to the 
+students. 
+
+//format s.no according to alphabetical order -first 3
+//       program code                         -next 3
+//       year                                 -next 4
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    vector<int> v;
+    int s_no;
+    cout<<"Enter your serial no : ";
+    cin>>s_no;
+    v.push_back(s_no);
+    int pr;
+    cout<<"Enter your branch (it-11; aiml-12) :";
+    cin>>pr;
+    if(pr==11 || pr==12){
+         v.push_back(pr);
+         int year;
+         cout<<"Enter the year : ";
+         cin>>year; 
+         v.push_back(year);
+
+         for(int a: v){
+             cout << a;
+            }
+     }else{
+        cout<<"error";
+            }
+
+    return 0;
+}
+
+
+         
+         
+          
+          
