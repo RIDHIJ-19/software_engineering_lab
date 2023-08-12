@@ -6,3 +6,22 @@ Department may be issued additional Inventory Items based on their requirement.
 You are required explore the problem thoroughly and write a Program for auto generation of 
 Unique Number to the listed IT Inventory.
 
+/*
+block-first 2 digits
+  it -11
+  CSE-12
+  ECE-13
+room no - next 3 digits
+IT Inventor- next 2 digits
+  Server--01 
+  Desktop Computer--01
+  Laptop--02
+  Printer--03
+  UPS--04
+  Scanner--05 
+  Projector--06
+condition-next digit
+  working-1
+  not working-0
+*/
+
