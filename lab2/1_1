@@ -6,7 +6,7 @@ You are required to write a program for auto generation of the enrollment number
 students. 
 
 //format s.no according to alphabetical order -first 3
-//       program code                         -next 3
+//       program code                         -next 2
 //       year                                 -next 4
 
 #include <bits/stdc++.h>
