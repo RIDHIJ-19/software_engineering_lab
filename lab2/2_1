@@ -38,6 +38,50 @@ int main(){
     return 0;
 }
 
+///using function
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<int> getStudentInfo() {
+    vector<int> v;
+    int s_no;
+    cout << "Enter your serial no : ";
+    cin >> s_no;
+    v.push_back(s_no);
+    int pr;
+    cout << "Enter your branch (it-11; aiml-12) :";
+    cin >> pr;
+    if (pr == 11 || pr == 12) {
+        v.push_back(pr);
+        int year;
+        cout << "Enter the year : ";
+        cin >> year;
+        v.push_back(year);
+    } else {
+        cout << "Invalid branch!" << endl;
+    }
+    return v;
+}
+
+void printStudentInfo(const vector<int>& v) {
+    for (int a : v) {
+        cout << a ;
+    }
+    cout << endl;
+}
+
+int main() {
+    vector<int> studentInfo = getStudentInfo();
+    if (!studentInfo.empty()) {
+        printStudentInfo(studentInfo);
+    }
+
+    return 0;
+}
+
+
 
          
          
