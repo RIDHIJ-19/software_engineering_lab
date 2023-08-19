@@ -25,3 +25,66 @@ condition-next digit
   not working-0
 */
 
+#include<bits/stdc++.h>
+using namespace std;
+
+bool isValidBlockCode(int code) {
+    return code == 11 || code == 12 || code == 13;
+}
+
+bool isValidInventoryCode(int code) {
+    return code >= 1 && code <= 7;
+}
+
+bool isValidCondition(char cond) {
+    return cond == 'y' || cond == 'n';
+}
+
+int getInventoryCode(int code) {
+    int inventoryCodes[] = {
+        0, 1, 2, 3, 4, 5, 6, 7
+    };
+    return inventoryCodes[code];
+}
+
+int main() {
+    vector<int> finalCode;
+
+    int blockCode, roomNo, inventoryCode;
+    char conditionCode;
+    
+    cout << "Enter the block code (IT-11, CSE-12, ECE-13): ";
+    cin >> blockCode;
+
+    cout << "Enter the room no: ";
+    cin >> roomNo;
+
+    cout << "Enter the inventory code (Server-1, Desktop Computer-2, Laptop-3, Printer-4, UPS-5, Scanner-6, Projector-7): ";
+    cin >> inventoryCode;
+
+    cout << "Enter the condition (y-working, n-not working): ";
+    cin >> conditionCode;
+
+    if (isValidBlockCode(blockCode) && roomNo >= 100 && roomNo <= 999 &&
+        isValidInventoryCode(inventoryCode) && isValidCondition(conditionCode)) {
+
+        int inventoryCodeInt = getInventoryCode(inventoryCode);
+
+        // Populate the vector
+        finalCode.push_back(blockCode);
+        finalCode.push_back(roomNo);
+        finalCode.push_back(inventoryCodeInt);
+        finalCode.push_back(conditionCode == 'y' ? 1 : 0);
+ 
+        for (int value : finalCode) {
+            cout << value;
+        }
+        cout << endl;
+    } else {
+        cout << "Invalid input! Please check the values you entered." << endl;
+    }
+
+    return 0;
+}
+
+
